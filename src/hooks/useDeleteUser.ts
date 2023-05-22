@@ -9,7 +9,7 @@ export const useDeleteUser = (postId?: number) => {
     return useMutation({
         mutationFn : async () => {
             await axios.delete(
-                `${url}/${postId}`
+                `https://mock-backend-data-json-server.onrender.com/users/${postId}`
             )
         }
     })

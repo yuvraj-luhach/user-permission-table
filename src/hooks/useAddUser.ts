@@ -10,7 +10,7 @@ export const useAddUser = (user?: User) => {
     return useMutation({
         mutationFn : async (newUser: User) => {
             await axios.post(
-                `${url}`,
+                `https://mock-backend-data-json-server.onrender.com/users`,
                 newUser
             )
         }

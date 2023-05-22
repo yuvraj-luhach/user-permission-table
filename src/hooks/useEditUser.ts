@@ -10,7 +10,7 @@ export const useEditUser = (user?: User) => {
     return useMutation({
         mutationFn : async (newUser: User) => {
             await axios.put(
-                `${url}/${newUser.id}`,
+                `https://mock-backend-data-json-server.onrender.com/users/${newUser.id}`,
                 newUser
             )
         }

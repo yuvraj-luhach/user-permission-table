@@ -11,7 +11,7 @@ export const useGetUsers = (query?: string) => {
     return useQuery(['getUser'],{
         queryFn : async () => {
             const { data } = await axios.get(
-                `${url}?${query}`
+                `https://mock-backend-data-json-server.onrender.com/users?${query}`
             )
             return data as User[];
         }

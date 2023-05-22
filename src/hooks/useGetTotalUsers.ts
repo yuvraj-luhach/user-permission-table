@@ -11,7 +11,7 @@ export const useGetTotalUser = () => {
     return useQuery(['getTotalUsers'],{
         queryFn : async () => {
             const { data } = await axios.get(
-                `${url}`
+                `https://mock-backend-data-json-server.onrender.com/users`
             )
             return data as User[];
         }
