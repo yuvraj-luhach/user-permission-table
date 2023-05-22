@@ -26,6 +26,7 @@ Project is created with:
 * React Query - for fetching data
 * Axios
 * React hot toast
+* Tailwind CSS
 
 ## Project Screenshots
 * Homepage
