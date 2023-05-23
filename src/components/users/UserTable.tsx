@@ -25,8 +25,10 @@ const UserTable= () => {
     const [user, setUser] = useState<User | undefined>(undefined)
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
-    const { data: paginatedData, refetch } = useGetUsers(query)
+    const { data: paginatedData, refetch, isLoading } = useGetUsers(query)
     const { data: total, refetch: getTotalRefetch } = useGetTotalUser()
+
+    // const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         setTimeout(() => {
@@ -91,7 +93,14 @@ const UserTable= () => {
                                 onClick={()=> {setUser(undefined); setEditModalOpen(true)}} />
                             </div>
                         </div>
-                        <table className="min-w-full leading-normal">
+                        {isLoading ? 
+                                <div className="my-10 text-center w-full flex items-center gap-2 justify-center">
+                                    <img src="/Spinner-1s-50px.gif" 
+                                    height="2rem !important" alt="" />
+                                    <div className="text-slate-500 text-2xl">Loading data ...</div>
+                                </div>    
+                            : 
+                            <table className="min-w-full leading-normal">
                             <thead>
                                 <tr>
                                     <th className="px-5 py-3 items-center justify-center border-gray-200 text-left text-sm font-semibold text-gray-500 tracking-wider">
@@ -161,7 +170,7 @@ const UserTable= () => {
                                     ))}                                            
                                 </tbody>
                             }
-                        </table>
+                        </table>}
                         <div className="p-5 w-full flex flex-row justify-between border-gray-200">
                             <div className="gap-4 flex flex-row justify-between w-full h-fit">
                                 <Button text="Previous" icon={IoMdArrowBack} classes="gap-2 text-center flex flex-row border-gray-200 border-[2px] text-slate-600 bg-transparent rounded-lg px-4 items-center font-semibold hover:bg-slate-100 p-2" onClick={()=> {if(pageNo>1) newPage(pageNo-1)} } />
