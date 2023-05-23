@@ -86,7 +86,7 @@ const UserTable= () => {
                                 <div className="text-neutral-400">Manage your team members and their account permissions here.</div>
                             </div>
                             <div className="gap-4 flex flex-row h-fit">
-                                <Button text="Download CSV" icon={BsCloudDownload} classes="gap-2 text-center flex flex-row border-gray-200 border-[2px] text-slate-600 bg-transparent rounded-lg px-4 items-center font-semibold hover:bg-slate-100 p-2 " onClick={()=> {console.log();}} />
+                                <Button text="Download CSV" icon={BsCloudDownload} classes="gap-2 text-center flex flex-row border-gray-200 border-[2px] text-slate-600 bg-slate-100 rounded-lg px-4 items-center font-semibold hover:bg-slate-100 p-2 " onClick={()=> {toast.error(`This functionality is not yet implemented`, {duration: 4000, style:{background:"rgb(254 205 211)"}})}} />
                                 <Button text="Add user" icon={MdOutlineAdd} classes="gap-2 items-center px-4 justify-center flex flex-row  text-white bg-blue-600 rounded-lg font-semibold hover:bg-blue-400 p-2 " 
                                 onClick={()=> {setUser(undefined); setEditModalOpen(true)}} />
                             </div>
