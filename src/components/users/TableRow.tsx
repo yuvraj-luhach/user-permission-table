@@ -5,10 +5,6 @@ import Badge from "../Badge"
 import Button from "../button/Button"
 
 import { toast } from 'react-hot-toast'
-// import EditUserModal from "../modals/EditUserModal"
-// import DeleteModal from "../modals/DeleteModal"
-// import useConfirmModal from "../../hooks/useConfirmModal"
-// import useEditModal from "../../hooks/useEditModal"
 
 interface TableRowProps{
     bgColor: string
@@ -27,8 +23,6 @@ const TableRow:React.FC<TableRowProps> = ({bgColor, id, name, img, email, status
     const date = last_login?.split("/")[0]
     const time = last_login?.split("/")[1]
 
-    // const confirmDeleteModal = useConfirmModal()
-    // const editUserModal = useEditModal()
     
     return (
         <tr className={`${bgColor}`}>

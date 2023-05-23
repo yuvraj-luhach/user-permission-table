@@ -7,29 +7,15 @@ import { Toaster } from "react-hot-toast";
 
 function App() {
 
-  const [users, setUsers] = useState([]);
-
-  const fetchUserData = () => {
-    fetch("http://localhost:4000/users")
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setUsers(data)
-      })
-  }
-
-  useEffect(() => {
-    fetchUserData()
-  }, [])
-  
-
   return (
     <>
       <Toaster position='bottom-center'/>
       <div className='max-w-screen-xl mx-auto p-5'>
         <div className='text-3xl mx-auto px-8 py-4 font-semibold'>
           Company Settings
+          <div className='text-red-500 italic font-normal pt-3 text-sm'>
+            Please reload the page if no data is visible and wait for a moment
+          </div>
         </div>
         {/* tabs component */}
 

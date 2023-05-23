@@ -52,7 +52,7 @@ const EditUserModal:React.FC<EditUserModalProps> = ({user, isOpen, title, closeM
             email: (document.getElementById('email') as HTMLInputElement).value,
             status: (document.getElementById("status") as HTMLSelectElement).value,
             role: (document.getElementById("role") as HTMLSelectElement).value,
-            last_login: "--/--"
+            last_login: "Not /logged in yet"
         }
 
         aMutate(newUser)
